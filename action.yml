@@ -6,6 +6,10 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  REGISTRY:
+    description: 'Container Registry name'
+    required: true
+    default: 'docker.io'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -14,3 +18,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
+    - ${{ inputs.REGISTRY }}
